@@ -1,0 +1,87 @@
+<div class="bg-white p-4 rounded-xl shadow">
+
+  <!-- Controls -->
+  <div class="flex flex-col md:flex-row gap-4 mb-4">
+
+    <input
+      type="text"
+      placeholder="Search category..."
+      [(ngModel)]="searchTerm"
+      class="border p-2 rounded w-full"
+    />
+
+    <select [(ngModel)]="filterType" class="border p-2 rounded">
+      <option value="all">All</option>
+      <option value="income">Income</option>
+      <option value="expense">Expense</option>
+    </select>
+
+    <button
+      (click)="sortByAmount()"
+      class="bg-blue-500 text-white px-4 py-2 rounded"
+    >
+      Sort by Amount
+    </button>
+
+  </div>
+
+  <!-- Admin Form -->
+  <div *ngIf="roleService.isAdmin()" class="mb-4 flex gap-2 flex-wrap">
+
+    <input [(ngModel)]="newTransaction.date" type="date" class="border p-2 rounded" />
+    <input [(ngModel)]="newTransaction.amount" type="number" placeholder="Amount" class="border p-2 rounded" />
+    <input [(ngModel)]="newTransaction.category" placeholder="Category" class="border p-2 rounded" />
+
+    <select [(ngModel)]="newTransaction.type" class="border p-2 rounded">
+      <option value="income">Income</option>
+      <option value="expense">Expense</option>
+    </select>
+
+    <button
+      (click)="addTransaction()"
+      class="bg-green-500 text-white px-4 py-2 rounded"
+    >
+      Add
+    </button>
+
+  </div>
+
+  <!-- Table -->
+  <table class="w-full border">
+    <thead class="bg-gray-100">
+      <tr>
+        <th class="p-2">Date</th>
+        <th class="p-2">Amount</th>
+        <th class="p-2">Category</th>
+        <th class="p-2">Type</th>
+        <th *ngIf="roleService.isAdmin()" class="p-2">Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let t of filteredTransactions; let i = index" class="text-center border-t">
+        <td class="p-2">{{ t.date }}</td>
+        <td class="p-2">₹{{ t.amount }}</td>
+        <td class="p-2">{{ t.category }}</td>
+        <td class="p-2">
+          <span
+            [class.text-green-600]="t.type === 'income'"
+            [class.text-red-600]="t.type === 'expense'"
+          >
+            {{ t.type }}
+          </span>
+        </td>
+
+        <td *ngIf="roleService.isAdmin()">
+          <button
+            (click)="deleteTransaction(i)"
+            class="bg-red-500 text-white px-2 py-1 rounded"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

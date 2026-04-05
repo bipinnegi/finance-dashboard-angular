@@ -1,0 +1,49 @@
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+  <!-- Balance -->
+  <div class="relative overflow-hidden bg-white/80 backdrop-blur-xl border border-gray-200 p-6 rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-300 group">
+
+    <!-- Gradient Glow -->
+    <div class="absolute -top-10 -right-10 w-32 h-32 bg-blue-200 opacity-30 rounded-full blur-2xl group-hover:scale-110 transition"></div>
+
+    <div class="relative z-10">
+      <p class="text-sm text-gray-500">Total Balance</p>
+      <h2 class="text-3xl font-semibold text-blue-600 mt-3 tracking-tight">
+        ₹{{ balance }}
+      </h2>
+      <p class="text-xs text-gray-400 mt-1">Available funds</p>
+    </div>
+
+  </div>
+
+  <!-- Income -->
+  <div class="relative overflow-hidden bg-white/80 backdrop-blur-xl border border-gray-200 p-6 rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-300 group">
+
+    <div class="absolute -top-10 -right-10 w-32 h-32 bg-green-200 opacity-30 rounded-full blur-2xl group-hover:scale-110 transition"></div>
+
+    <div class="relative z-10">
+      <p class="text-sm text-gray-500">Income</p>
+      <h2 class="text-3xl font-semibold text-green-600 mt-3 tracking-tight">
+        ₹{{ totalIncome }}
+      </h2>
+      <p class="text-xs text-gray-400 mt-1">Total earnings</p>
+    </div>
+
+  </div>
+
+  <!-- Expenses -->
+  <div class="relative overflow-hidden bg-white/80 backdrop-blur-xl border border-gray-200 p-6 rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-300 group">
+
+    <div class="absolute -top-10 -right-10 w-32 h-32 bg-red-200 opacity-30 rounded-full blur-2xl group-hover:scale-110 transition"></div>
+
+    <div class="relative z-10">
+      <p class="text-sm text-gray-500">Expenses</p>
+      <h2 class="text-3xl font-semibold text-red-500 mt-3 tracking-tight">
+        ₹{{ totalExpenses }}
+      </h2>
+      <p class="text-xs text-gray-400 mt-1">Total spending</p>
+    </div>
+
+  </div>
+
+</div>

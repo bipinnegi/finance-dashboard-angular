@@ -1,0 +1,42 @@
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+
+  <!-- Total Expense -->
+  <div class="bg-white p-4 rounded-xl shadow">
+    <h3 class="text-gray-500 text-sm">Total Expenses</h3>
+    <p class="text-2xl font-semibold text-red-500">
+      ₹{{ totalExpenses }}
+    </p>
+  </div>
+
+  <!-- Top Category -->
+  <div class="bg-white p-4 rounded-xl shadow">
+    <h3 class="text-gray-500 text-sm">Top Category</h3>
+    <p class="text-lg font-semibold">
+      {{ topCategoryData.category }}
+    </p>
+    <p class="text-sm text-gray-500">
+      {{ topCategoryData.percent }}% of expenses
+    </p>
+  </div>
+
+  <!-- Monthly Change -->
+  <div class="bg-white p-4 rounded-xl shadow">
+    <h3 class="text-gray-500 text-sm">Monthly Change</h3>
+    <p
+      class="text-lg font-semibold"
+      [class.text-green-600]="monthlyComparison > 0"
+      [class.text-red-600]="monthlyComparison < 0"
+    >
+      {{ monthlyComparison }}%
+    </p>
+  </div>
+
+  <!-- Avg Daily -->
+  <div class="bg-white p-4 rounded-xl shadow col-span-1 md:col-span-3">
+    <h3 class="text-gray-500 text-sm">Average Daily Expense</h3>
+    <p class="text-xl font-semibold">
+      ₹{{ avgDailyExpense }}
+    </p>
+  </div>
+
+</div>

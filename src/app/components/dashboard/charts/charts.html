@@ -1,0 +1,37 @@
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+
+  <!-- Line Chart -->
+  <div class="relative overflow-hidden bg-white/80 backdrop-blur-xl border border-gray-200 p-6 rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-300 group">
+
+    <!-- Glow -->
+    <div class="absolute -top-10 -right-10 w-32 h-32 bg-blue-200 opacity-30 rounded-full blur-2xl group-hover:scale-110 transition"></div>
+
+    <div class="relative z-10">
+      <p class="text-sm text-gray-500 mb-1">Analytics</p>
+      <h3 class="text-lg font-semibold mb-4">Balance Trend</h3>
+
+      <div class="h-64">
+        <canvas #lineCanvas></canvas>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Pie Chart -->
+  <div class="relative overflow-hidden bg-white/80 backdrop-blur-xl border border-gray-200 p-6 rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-300 group">
+
+    <!-- Glow -->
+    <div class="absolute -top-10 -right-10 w-32 h-32 bg-purple-200 opacity-30 rounded-full blur-2xl group-hover:scale-110 transition"></div>
+
+    <div class="relative z-10">
+      <p class="text-sm text-gray-500 mb-1">Spending</p>
+      <h3 class="text-lg font-semibold mb-4">Expense Breakdown</h3>
+
+      <div class="h-64 flex items-center justify-center">
+        <canvas #pieCanvas></canvas>
+      </div>
+    </div>
+
+  </div>
+
+</div>

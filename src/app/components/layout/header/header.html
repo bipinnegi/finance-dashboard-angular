@@ -1,0 +1,33 @@
+<div class="bg-white/80 backdrop-blur-xl border-b border-gray-200 px-6 py-4 flex justify-between items-center">
+
+  <!-- Left -->
+  <div>
+    <h1 class="text-lg font-semibold text-gray-700 tracking-tight">
+      Finance Dashboard
+    </h1>
+    <p class="text-xs text-gray-400">
+      Overview of your financial activity
+    </p>
+  </div>
+
+  <!-- Right -->
+  <div class="flex items-center gap-4">
+
+    <!-- Role Label -->
+    <span class="text-sm text-gray-500 hidden md:block">
+      Role:
+    </span>
+
+    <!-- Role Select -->
+    <select
+      [(ngModel)]="selectedRole"
+      (change)="onRoleChange()"
+      class="bg-gray-100 border border-gray-200 px-3 py-2 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+    >
+      <option value="viewer">Viewer</option>
+      <option value="admin">Admin</option>
+    </select>
+
+  </div>
+
+</div>
